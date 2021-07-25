@@ -19,9 +19,9 @@ class CreateEmpleadosTable extends Migration
             $table->string('snombre',45)->nullable();
             $table->string('papellido',45);
             $table->string('sapellido',45)->nullable();
-            $table->string('identidad',13);
+            $table->string('identidad',13)->unique();
             $table->string('telefono',8);
-            $table->string('email', 100)->nullable();
+            $table->string('email', 100)->nullable()->unique();
             $table->string('direccion',255);
             $table->string('foto_url', 2048)->nullable();
             $table->boolean('estado');

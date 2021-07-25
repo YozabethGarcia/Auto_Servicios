@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCargosTable extends Migration
+class CreateProveedorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateCargosTable extends Migration
      */
     public function up()
     {
-        Schema::create('cargos', function (Blueprint $table) {
+        Schema::create('proveedors', function (Blueprint $table) {
             $table->id();
-            $table->string('cargo',45)->unique();
-            $table->float('salario_hora', 3, 2, false);
+            $table->string('nombre',45)->unique();
+            $table->string('telefono',8);
+            $table->string('email',100);
+            $table->string('direccion',255);
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateCargosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cargos');
+        Schema::dropIfExists('proveedors');
     }
 }
