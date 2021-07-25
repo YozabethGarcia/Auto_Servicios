@@ -15,6 +15,7 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->string('barcode', 45)->nullable();
             $table->string('descripcion',255);
             $table->smallInteger('stock',false,false);
             $table->smallInteger('min_stock',false,false);

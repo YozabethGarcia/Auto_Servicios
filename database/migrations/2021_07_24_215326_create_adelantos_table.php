@@ -17,7 +17,7 @@ class CreateAdelantosTable extends Migration
             $table->id();
             $table->date('fecha');
             $table->string('concepto', 255);
-            $table->float('monto', 4,2,false);
+            $table->float('monto');
             $table->unsignedBigInteger('empleado_id');
             $table->foreign('empleado_id')->references('id')->on('empleados')
             ->onDelete('cascade')->onUpdate('cascade');

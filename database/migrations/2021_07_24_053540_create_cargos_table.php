@@ -16,7 +16,7 @@ class CreateCargosTable extends Migration
         Schema::create('cargos', function (Blueprint $table) {
             $table->id();
             $table->string('cargo',45)->unique();
-            $table->float('salario_hora', 3, 2, false);
+            $table->float('salario_hora');
             $table->timestamps();
         });
     }
