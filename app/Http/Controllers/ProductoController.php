@@ -15,6 +15,7 @@ class ProductoController extends Controller
     public function index()
     {
         //
+        return "imdex";
     }
 
     /**
@@ -25,6 +26,7 @@ class ProductoController extends Controller
     public function create()
     {
         //
+        return "create";
     }
 
     /**
