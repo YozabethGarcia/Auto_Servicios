@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
+use Database\Seeders\ProductoVentaSeeder;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('inventario', [ProductoController::class, 'index']);
+/*Controlador para inventario "¨Productos" */
+
+Route::get('/productos', [ProductoController::class, 'index']);
+
+Route::get('/productos/create', [ProductoController::class, 'create']);
+
+Route::get('/productos/{id}', [ProductoController::class, 'show']);
 
