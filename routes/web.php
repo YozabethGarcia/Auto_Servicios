@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\EmpleadoController;
 use Database\Seeders\ProductoVentaSeeder;
 
 /*
@@ -25,9 +26,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 /*Controlador para inventario "¨Productos" */
 
-Route::get('/productos', [ProductoController::class, 'index']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/productos', [ProductoController::class, 'index'])
+->name('productos');
 
-Route::get('/productos/create', [ProductoController::class, 'create']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/productos/create', [ProductoController::class, 'index'])
+->name('productos.create');
 
-Route::get('/productos/{id}', [ProductoController::class, 'show']);
+/* Controlador para empleados */
+Route::middleware(['auth:sanctum', 'verified'])->get('/empleados', [EmpleadoController::class, 'index'])
+->name('empleados');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/empleados/create', [EmpleadoController::class, 'index'])
+->name('empleados.create');

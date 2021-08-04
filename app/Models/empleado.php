@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class empleado extends Model
 {
     use HasFactory;
+
+    public function cargo(){
+        return $this->belongsTo('App\Models\cargo');
+    }
+
 }
