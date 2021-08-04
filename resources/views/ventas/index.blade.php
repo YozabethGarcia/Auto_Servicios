@@ -63,19 +63,7 @@
                 <th class="px-4 py-3">Tipo de Producto</th>
               </tr>
             </thead>
-            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">              
-                @foreach($productos as $producto)
-                    <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-                        <td class="px-4 py-3">{{$producto->barcode}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->descripcion}}</td>
-                        <td class="px-4 py-3 text-xs">{{$producto->stock}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->min_stock}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->max_stock}}</td>
-                        <td class="px-4 py-3 text-sm">L {{$producto->precio}}</td>
-                        <td class="px-4 py-3 text-xs">{{$producto->ubicacion}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->tipo_producto_id}}</td>
-                    </tr>
-                @endforeach              
+            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">                           
             </tbody>
           </table>
         </div>
