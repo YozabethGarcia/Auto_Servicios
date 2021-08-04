@@ -1,5 +1,5 @@
 @extends('layouts.plantilla')
 
 @section('content')
-    <x-main/>
+    <x-form/>
 @endsection
