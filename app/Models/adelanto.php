@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class adelanto extends Model
 {
     use HasFactory;
+
+    public function empleado(){
+        return $this->belongsTo('App\Models\empleado');
+    }
+
 }
