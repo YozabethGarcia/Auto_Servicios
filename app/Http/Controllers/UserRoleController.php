@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\user_role;
+use App\Models\venta;
 use Illuminate\Http\Request;
 
 class UserRoleController extends Controller
@@ -14,6 +15,8 @@ class UserRoleController extends Controller
      */
     public function index()
     {
+        $Ventas = venta::all();
+        return view("ventas.index", compact('ventas'));
         //
     }
 
