@@ -29,8 +29,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/productos', [ProductoController::class, 'index'])
 ->name('productos');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/productos/create', [ProductoController::class, 'index'])
+Route::middleware(['auth:sanctum', 'verified'])->get('/productos/create', [ProductoController::class, 'create'])
 ->name('productos.create');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/productos/store', [ProductoController::class, 'store'])
+->name('productos.store');
 
 /* Controlador para empleados */
 Route::middleware(['auth:sanctum', 'verified'])->get('/empleados', [EmpleadoController::class, 'index'])

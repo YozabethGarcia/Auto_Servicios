@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\producto;
+use App\Models\tipo_producto;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -28,7 +29,8 @@ class ProductoController extends Controller
     public function create()
     {
         //
-        return view('productos.create');
+        $tipoproducto = tipo_producto::all();
+        return view('productos.create', compact('tipoproducto'));
     }
 
     /**
@@ -39,8 +41,31 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return "store";
+        
+        $request->validate([
+            'codigo' => 'required',
+            'descripcion' => 'required',
+            'valor' => 'required',
+            'valormin' => 'required',
+            'valormax' => 'required',
+            'precio' => 'required',
+            'ubicacion' => 'required',
+            'tproducto' => 'required'
+        ]);
+
+        $iproducto = new producto;
+        $iproducto->barcode=$request->codigo;
+        $iproducto->descripcion=$request->descripcion;
+        $iproducto->stock=$request->valor;
+        $iproducto->min_stock=$request->valormin;
+        $iproducto->max_stock=$request->valormax;
+        $iproducto->precio=$request->precio;
+        $iproducto->ubicacion=$request->ubicacion;
+        $iproducto->tipo_producto_id=$request->tproducto;
+        $iproducto->foto=$request->foto;
+        $iproducto->save();
+
+        return redirect()->route('productos');
     }
 
     /**
