@@ -13,4 +13,11 @@ class empleado extends Model
         return $this->belongsTo('App\Models\cargo');
     }
 
+    public function asistencias(){
+        return $this->hasMany('App\Models\asistencia');
+    }
+
+    public function adelantos(){
+        return $this->hasMany('App\Models\adelanto');
+    }
 }

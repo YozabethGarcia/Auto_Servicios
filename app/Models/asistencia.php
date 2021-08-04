@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class asistencia extends Model
 {
     use HasFactory;
+
+    public function empleado(){
+        return $this->belongsTo('App\Models\empleado');
+    }
 }

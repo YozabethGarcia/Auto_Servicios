@@ -12,4 +12,16 @@ class producto extends Model
     public function tipo(){
         return $this->belongsTo('App\Models\tipo_producto','tipo_producto_id');
     }
+
+    public function ventas(){
+        return $this->hasMany('App\Models\producto_venta');
+    }
+
+    public function compras(){
+        return $this->hasMany('App\Models\producto_compra');
+    }
+
+    public function proveedores(){
+        return $this->hasMany('App\Models\producto_proveedor');
+    }
 }
