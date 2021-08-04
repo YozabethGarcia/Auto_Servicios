@@ -1093,13 +1093,6 @@ select {
 .col-span-6 {
 	grid-column: span 6 / span 6;
 }
-<<<<<<< HEAD
-.m-5 {
-	margin: 1.25rem;
-}
-.m-4 {
-	margin: 1rem;
-=======
 .col-span-3 {
 	grid-column: span 3 / span 3;
 }
@@ -1108,7 +1101,12 @@ select {
 }
 .col-span-4 {
 	grid-column: span 4 / span 4;
->>>>>>> gtejada
+}
+.m-5 {
+	margin: 1.25rem;
+}
+.m-4 {
+	margin: 1rem;
 }
 .mx-auto {
 	margin-left: auto;
@@ -1215,6 +1213,9 @@ select {
 .mt-0 {
 	margin-top: 0px;
 }
+.mb-8 {
+	margin-bottom: 2rem;
+}
 .mb-0 {
 	margin-bottom: 0px;
 }
@@ -1230,14 +1231,8 @@ select {
 .-mt-px {
 	margin-top: -1px;
 }
-<<<<<<< HEAD
-=======
 .mb-14 {
 	margin-bottom: 3.5rem;
-}
->>>>>>> gtejada
-.mb-8 {
-	margin-bottom: 2rem;
 }
 .block {
 	display: block;
@@ -1347,10 +1342,11 @@ select {
 .w-20 {
 	width: 5rem;
 }
-<<<<<<< HEAD
-=======
 .w-14 {
 	width: 3.5rem;
+}
+.w-32 {
+	width: 8rem;
 }
 .w-9 {
 	width: 2.25rem;
@@ -1363,10 +1359,6 @@ select {
 }
 .w-px {
 	width: 1px;
-}
->>>>>>> gtejada
-.w-32 {
-	width: 8rem;
 }
 .min-w-0 {
 	min-width: 0px;
@@ -1643,22 +1635,18 @@ select {
 	--tw-border-opacity: 1;
 	border-color: rgba(243, 244, 246, var(--tw-border-opacity));
 }
-<<<<<<< HEAD
-.border-red-400 {
-	--tw-border-opacity: 1;
-	border-color: rgba(248, 113, 113, var(--tw-border-opacity));
-=======
 .border-blue-600 {
 	--tw-border-opacity: 1;
 	border-color: rgba(37, 99, 235, var(--tw-border-opacity));
->>>>>>> gtejada
+}
+.border-blue-400 {
+	--tw-border-opacity: 1;
+	border-color: rgba(96, 165, 250, var(--tw-border-opacity));
 }
 .border-gray-400 {
 	--tw-border-opacity: 1;
 	border-color: rgba(156, 163, 175, var(--tw-border-opacity));
 }
-<<<<<<< HEAD
-=======
 .border-blue-500 {
 	--tw-border-opacity: 1;
 	border-color: rgba(59, 130, 246, var(--tw-border-opacity));
@@ -1667,7 +1655,6 @@ select {
 	--tw-border-opacity: 1;
 	border-color: rgba(248, 113, 113, var(--tw-border-opacity));
 }
->>>>>>> gtejada
 .bg-white {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
@@ -1802,8 +1789,6 @@ select {
 .p-6 {
 	padding: 1.5rem;
 }
-<<<<<<< HEAD
-=======
 .p-4 {
 	padding: 1rem;
 }
@@ -1813,12 +1798,11 @@ select {
 .p-0 {
 	padding: 0px;
 }
-.p-1 {
-	padding: 0.25rem;
-}
->>>>>>> gtejada
 .p-5 {
 	padding: 1.25rem;
+}
+.p-1 {
+	padding: 0.25rem;
 }
 .px-4 {
 	padding-left: 1rem;
@@ -1914,27 +1898,21 @@ select {
 .pb-1 {
 	padding-bottom: 0.25rem;
 }
+.pr-8 {
+	padding-right: 2rem;
+}
 .pl-2 {
 	padding-left: 0.5rem;
 }
 .pt-8 {
 	padding-top: 2rem;
 }
-<<<<<<< HEAD
-.pr-8 {
-	padding-right: 2rem;
-}
-=======
 .pr-6 {
 	padding-right: 1.5rem;
-}
-.pr-8 {
-	padding-right: 2rem;
 }
 .text-left {
 	text-align: left;
 }
->>>>>>> gtejada
 .text-center {
 	text-align: center;
 }
@@ -1987,15 +1965,12 @@ select {
 .font-bold {
 	font-weight: 700;
 }
-<<<<<<< HEAD
-=======
 .font-extrabold {
 	font-weight: 800;
 }
 .font-light {
 	font-weight: 300;
 }
->>>>>>> gtejada
 .uppercase {
 	text-transform: uppercase;
 }
@@ -2257,16 +2232,13 @@ select {
 	--tw-border-opacity: 1;
 	border-color: rgba(209, 213, 219, var(--tw-border-opacity));
 }
-<<<<<<< HEAD
-=======
-.hover\:border-blue-500:hover {
-	--tw-border-opacity: 1;
-	border-color: rgba(59, 130, 246, var(--tw-border-opacity));
-}
->>>>>>> gtejada
 .hover\:border-gray-500:hover {
 	--tw-border-opacity: 1;
 	border-color: rgba(107, 114, 128, var(--tw-border-opacity));
+}
+.hover\:border-blue-500:hover {
+	--tw-border-opacity: 1;
+	border-color: rgba(59, 130, 246, var(--tw-border-opacity));
 }
 .hover\:bg-indigo-600:hover {
 	--tw-bg-opacity: 1;
@@ -2359,16 +2331,13 @@ select {
 	--tw-border-opacity: 1;
 	border-color: rgba(209, 213, 219, var(--tw-border-opacity));
 }
-<<<<<<< HEAD
-=======
-.focus\:border-blue-500:focus {
-	--tw-border-opacity: 1;
-	border-color: rgba(59, 130, 246, var(--tw-border-opacity));
-}
->>>>>>> gtejada
 .focus\:border-gray-500:focus {
 	--tw-border-opacity: 1;
 	border-color: rgba(107, 114, 128, var(--tw-border-opacity));
+}
+.focus\:border-blue-500:focus {
+	--tw-border-opacity: 1;
+	border-color: rgba(59, 130, 246, var(--tw-border-opacity));
 }
 .focus\:bg-indigo-600:focus {
 	--tw-bg-opacity: 1;
