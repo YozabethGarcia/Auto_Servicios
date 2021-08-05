@@ -127,6 +127,9 @@
         </div>
       </div>
     </div>
+    <div>
+      <a href="{{route('productos.create')}}" type="submit" class="bg-white text-blue-800 font-semibold ml-4 py-2 px-4 border border-blue-400 rounded shadow"> Ingresar Producto</a>
+    </div>
     <!-- ./Client Table -->
   </div>
 @endsection

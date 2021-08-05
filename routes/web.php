@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CompraController;
+use App\Http\Controllers\VentaController;
 use Database\Seeders\ProductoVentaSeeder;
 
 /*
@@ -33,9 +34,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/productos', [ProductoCont
 Route::middleware(['auth:sanctum', 'verified'])->get('/productos/create', [ProductoController::class, 'create'])
 ->name('productos.create');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/productos/store', [ProductoController::class, 'store'])
+->name('productos.store');
+
 /* Controlador para empleados */
 Route::middleware(['auth:sanctum', 'verified'])->get('/empleados', [EmpleadoController::class, 'index'])
 ->name('empleados');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/empleados/create', [EmpleadoController::class, 'create'])
 ->name('empleados.create');
