@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\CompraController;
 use Database\Seeders\ProductoVentaSeeder;
 
 /*
@@ -29,12 +30,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/productos', [ProductoController::class, 'index'])
 ->name('productos');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/productos/create', [ProductoController::class, 'index'])
+Route::middleware(['auth:sanctum', 'verified'])->get('/productos/create', [ProductoController::class, 'create'])
 ->name('productos.create');
 
 /* Controlador para empleados */
 Route::middleware(['auth:sanctum', 'verified'])->get('/empleados', [EmpleadoController::class, 'index'])
 ->name('empleados');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/empleados/create', [EmpleadoController::class, 'index'])
+Route::middleware(['auth:sanctum', 'verified'])->get('/empleados/create', [EmpleadoController::class, 'create'])
 ->name('empleados.create');
+
+/* Controlador para compras */
+Route::middleware(['auth:sanctum', 'verified'])->get('/compras', [CompraController::class, 'index'])
+->name('compras');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/compras/create', [CompraController::class, 'create'])
+->name('compras.create');

@@ -3,7 +3,7 @@
 @section('content')
 <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
     
-    <!-- Statistics Cards -->
+    <!-- Statistics Cards 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4">
       <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
         <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <!-- ./Statistics Cards -->
+     ./Statistics Cards -->
 
     <div class="grid grid-cols-1 p-0 gap-0 h-full w-full">
 
@@ -53,27 +53,25 @@
           <table class="w-full">
             <thead>
               <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                <th class="px-4 py-3">Código de Barra</th>
-                <th class="px-4 py-3">Descripción</th>
-                <th class="px-4 py-3">Stock</th>
-                <th class="px-4 py-3">Min Stock</th>
-                <th class="px-4 py-3">Max Stock</th>
-                <th class="px-4 py-3">Precio</th>
-                <th class="px-4 py-3">Ubicación</th>
-                <th class="px-4 py-3">Tipo de Producto</th>
+                <th class="px-4 py-3">Fecha</th>
+                <th class="px-4 py-3"># Factura</th>
+                <th class="px-4 py-3">Proveedor</th>
+                <th class="px-4 py-3">Sub total</th>
+                <th class="px-4 py-3">Descuento</th>
+                <th class="px-4 py-3">ISV</th>
+                <th class="px-4 py-3">Total</th>                
               </tr>
             </thead>
             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">              
-                @foreach($productos as $producto)
+                @foreach($compras as $compra)
                     <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-                        <td class="px-4 py-3">{{$producto->barcode}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->descripcion}}</td>
-                        <td class="px-4 py-3 text-xs">{{$producto->stock}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->min_stock}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->max_stock}}</td>
-                        <td class="px-4 py-3 text-sm">L {{$producto->precio}}</td>
-                        <td class="px-4 py-3 text-xs">{{$producto->ubicacion}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->tipo_producto_id}}</td>
+                        <td class="px-4 py-3">{{$compra->fecha}}</td>
+                        <td class="px-4 py-3 text-sm">{{$compra->factura}}</td>
+                        <td class="px-4 py-3 text-xs">{{$compra->proveedor->nombre}}</td>
+                        <td class="px-4 py-3 text-sm">{{$compra->subtotal}}</td>
+                        <td class="px-4 py-3 text-sm">{{$compra->descuento}}</td>
+                        <td class="px-4 py-3 text-sm">L {{$compra->isv}}</td>
+                        <td class="px-4 py-3 text-xs">{{$compra->total}}</td>                        
                     </tr>
                 @endforeach              
             </tbody>
