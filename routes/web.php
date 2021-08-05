@@ -51,3 +51,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/compras', [CompraControll
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/compras/create', [CompraController::class, 'create'])
 ->name('compras.create');
+
+/* Controlador para ventas */
+Route::middleware(['auth:sanctum', 'verified'])->get('/ventas', [VentaController::class, 'index'])
+->name('ventas');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/ventas/create', [VentaController::class, 'create'])
+->name('ventas.create');

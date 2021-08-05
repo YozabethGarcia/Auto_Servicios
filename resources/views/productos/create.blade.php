@@ -45,12 +45,6 @@
                             <br>
                             @error('valormax') <span class="error text-red-600">El stock maximo del producto es obligatorio.</span> @enderror
                         </div><br>
-                        <button  type="submit"
-                        class="bg-white text-blue-800 font-semibold py-2 px-4 border border-blue-400 rounded shadow">
-                            Ingresar
-                        </button>     
-                    </div>
-                    <div class="p-5" style="float: left; width: 600px"><br>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Precio:</label>
                             <input name="precio" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -82,10 +76,16 @@
                             <br>
                         @error('foto') <span class="error text-red-600">Es necesaria la imagen. </span> @enderror
                         </div>
+                        <button  type="submit"
+                        class="bg-white text-blue-800 font-semibold my-2 py-2 px-4 border border-blue-400 rounded shadow">
+                            Ingresar
+                        </button>  
+                    </div>
+                    <div class="p-5" style="float: left; width: 600px"><br>
+                        
                     </div>
                 </div>
             </form> 
         </div>
     </div>
-    <x-form/>
 @endsection
