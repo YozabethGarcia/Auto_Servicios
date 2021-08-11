@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\empleado;
 use Illuminate\Http\Request;
+use App\Models\cargo;
 
 class EmpleadoController extends Controller
 {
@@ -27,6 +28,8 @@ class EmpleadoController extends Controller
     public function create()
     {
         //
+        $cargos = cargo::all();
+        return view("empleados.create", compact('cargos'));
     }
 
     /**
@@ -38,6 +41,29 @@ class EmpleadoController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'pnombre' => 'required',
+            'papellido' => 'required',
+            'identidad' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required'
+        ]);
+
+        $empleado = new empleado;
+        $empleado->pnombre=$request->pnombre;
+        $empleado->snombre=$request->snombre;
+        $empleado->papellido=$request->papellido;
+        $empleado->sapellido=$request->sapellido;
+        $empleado->identidad=$request->identidad;
+        $empleado->telefono=$request->telefono;
+        $empleado->email=$request->email;
+        $empleado->direccion=$request->direccion;
+        $empleado->foto_url=$request->foto;
+        $empleado->estado=1;
+        $empleado->cargo_id=$request->cargos;
+        $empleado->save();
+
+        return redirect()->route('empleados');
     }
 
     /**

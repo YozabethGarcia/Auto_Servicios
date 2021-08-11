@@ -3,7 +3,10 @@
 @section('content')
     <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
         <div>
-            <form action="{{route('productos.store')}}" method="GET">     
+            <form action="{{route('productos.store')}}" method="POST">  
+
+                @csrf
+                  
                 <div class="py-6 w-100">
                     <div class="w-50 py-4  sm:px-6 lg:px-8" style="float: left">
                         

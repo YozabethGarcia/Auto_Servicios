@@ -26,6 +26,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+
+
 /*Controlador para inventario "¨Productos" */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/productos', [ProductoController::class, 'index'])
@@ -34,16 +36,22 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/productos', [ProductoCont
 Route::middleware(['auth:sanctum', 'verified'])->get('/productos/create', [ProductoController::class, 'create'])
 ->name('productos.create');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/productos/store', [ProductoController::class, 'store'])
+Route::middleware(['auth:sanctum', 'verified'])->post('/productos', [ProductoController::class, 'store'])
 ->name('productos.store');
+
+
 
 /* Controlador para empleados */
 Route::middleware(['auth:sanctum', 'verified'])->get('/empleados', [EmpleadoController::class, 'index'])
 ->name('empleados');
 
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/empleados/create', [EmpleadoController::class, 'create'])
 ->name('empleados.create');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/empleados', [EmpleadoController::class, 'store'])
+->name('empleados.store');
+
+
 
 /* Controlador para compras */
 Route::middleware(['auth:sanctum', 'verified'])->get('/compras', [CompraController::class, 'index'])
