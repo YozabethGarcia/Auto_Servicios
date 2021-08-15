@@ -39,7 +39,7 @@
                             <input name="valormin" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             type="number" placeholder="00">
                             <br>
-                            @error('valormin') <span class="error text-red-600">El stock minimo del producto es obligatorio.</span> @enderror
+                            @error('valormin') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Stock Máximo:</label>
@@ -83,6 +83,7 @@
                         class="bg-white text-blue-800 font-semibold my-2 py-2 px-4 border border-blue-400 rounded shadow">
                             Ingresar
                         </button>  
+                        <a href="{{route('productos.index')}}">Cancelar</a>
                     </div>
                     <div class="p-5" style="float: left; width: 600px"><br>
                         

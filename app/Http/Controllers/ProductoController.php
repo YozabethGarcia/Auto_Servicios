@@ -65,7 +65,7 @@ class ProductoController extends Controller
         $iproducto->foto=$request->foto;
         $iproducto->save();
 
-        return redirect()->route('productos');
+        return redirect()->route('productos.index');
     }
 
     /**
@@ -124,7 +124,7 @@ class ProductoController extends Controller
         $producto->foto=$request->foto;
         $producto->save();
         
-        return redirect()->route('productos');
+        return redirect()->route('productos.index');
     }
 
     public function destroy(producto $producto)

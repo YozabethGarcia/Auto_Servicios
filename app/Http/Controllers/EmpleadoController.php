@@ -63,7 +63,7 @@ class EmpleadoController extends Controller
         $empleado->cargo_id=$request->cargos;
         $empleado->save();
 
-        return redirect()->route('empleados');
+        return redirect()->route('empleados.index');
     }
 
     /**
@@ -75,6 +75,7 @@ class EmpleadoController extends Controller
     public function show(empleado $empleado)
     {
         //
+        
     }
 
     /**
@@ -86,6 +87,8 @@ class EmpleadoController extends Controller
     public function edit(empleado $empleado)
     {
         //
+        $cargos = cargo::all();
+        return view('empleados.edit', compact('empleado', 'cargos'));
     }
 
     /**
@@ -98,6 +101,28 @@ class EmpleadoController extends Controller
     public function update(Request $request, empleado $empleado)
     {
         //
+        $request->validate([
+            'pnombre' => 'required',
+            'papellido' => 'required',
+            'identidad' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required'
+        ]);
+        
+        $empleado->pnombre=$request->pnombre;
+        $empleado->snombre=$request->snombre;
+        $empleado->papellido=$request->papellido;
+        $empleado->sapellido=$request->sapellido;
+        $empleado->identidad=$request->identidad;
+        $empleado->telefono=$request->telefono;
+        $empleado->email=$request->email;
+        $empleado->direccion=$request->direccion;
+        $empleado->foto_url=$request->foto;
+        $empleado->estado=1;
+        $empleado->cargo_id=$request->cargos;
+        $empleado->save();
+
+        return redirect()->route('empleados.index');
     }
 
     /**
