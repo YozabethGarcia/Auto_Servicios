@@ -46,7 +46,8 @@ class EmpleadoController extends Controller
             'papellido' => 'required',
             'identidad' => 'required',
             'telefono' => 'required',
-            'direccion' => 'required'
+            'direccion' => 'required',
+            'cargos' => 'required'
         ]);
 
         $empleado = new empleado;
@@ -106,7 +107,8 @@ class EmpleadoController extends Controller
             'papellido' => 'required',
             'identidad' => 'required',
             'telefono' => 'required',
-            'direccion' => 'required'
+            'direccion' => 'required',
+            'cargos' => 'required'
         ]);
         
         $empleado->pnombre=$request->pnombre;

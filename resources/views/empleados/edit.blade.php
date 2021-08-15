@@ -18,54 +18,54 @@
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Primer Nombre:</label>
                             <input name="pnombre" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{$empleado->pnombre}}">
+                            type="text" value="{{old('pnombre', $empleado->pnombre)}}">
                             <br>
                             @error('pnombre') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Segundo Nombre:</label>
                             <input name="snombre" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{$empleado->snombre}}">
+                            type="text" value="{{old('snombre',$empleado->snombre)}}">
                             <br>                            
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Primer Apellido:</label>
                             <input name="papellido" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{$empleado->papellido}}">
+                            type="text" value="{{old('papellido', $empleado->papellido)}}">
                             <br>
                             @error('papellido') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Segundo Apellido:</label>
                             <input name="sapellido" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{$empleado->sapellido}}">
+                            type="text" value="{{old('sapellido', $empleado->sapellido)}}">
                             <br>                            
                         </div>
                         <br>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Identidad:</label>
                             <input name="identidad" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{$empleado->identidad}}">
+                            type="text" value="{{old('identidad', $empleado->identidad)}}">
                             <br>
                             @error('identidad') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Telefono:</label>
                             <input name="telefono" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{$empleado->telefono}}">
+                            type="text" value="{{old('telefono', $empleado->telefono)}}">
                             <br>
                             @error('telefono') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Email:</label>
                             <input name="email" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="email" value="{{$empleado->email}}">
+                            type="email" value="{{old('email', $empleado->email)}}">
                             <br>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Dirección:</label>
                             <textarea name="direccion"
                             class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            cols="50" rows="3">{{$empleado->direccion}}</textarea> 
+                            cols="50" rows="3">{{old('direccion', $empleado->direccion)}}</textarea> 
                             @error('direccion') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>                    
                         </div><br>              
@@ -73,9 +73,9 @@
                             <label class="inline-block text-gray-400 w-32 font-bold">Cargo:</label>
                             <select name="cargos" 
                                 class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
-                                <option value='-1'>Seleccione el cargo</option>
+                                <option value=''>Seleccione el cargo</option>
                                 @foreach($cargos as $cargo)
-                                <option value={{ $cargo->id }} <?php if($cargo->id == $empleado->cargo_id) echo 'selected' ?>> {{ $cargo->cargo }}</option>
+                                <option value={{ $cargo->id }} <?php if($cargo->id == old('cargos',$empleado->cargo_id)) echo 'selected' ?>> {{ $cargo->cargo }}</option>
                                 @endforeach
                             </select>
                             @error('cargos') <br><span class="error text-red-600">{{$message}}</span> @enderror
