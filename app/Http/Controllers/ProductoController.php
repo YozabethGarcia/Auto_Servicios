@@ -77,7 +77,7 @@ class ProductoController extends Controller
     public function show(producto $producto)
     {
         //
-        return view('Productos.show', ['producto' => $producto]);
+        return $producto;
     }
 
     /**
@@ -88,8 +88,8 @@ class ProductoController extends Controller
      */
     public function edit(producto $producto)
     {
-        //
-        return "edit";
+        //        
+        return view('productos.edit', compact('producto'));
     }
 
     /**
@@ -105,12 +105,6 @@ class ProductoController extends Controller
         return "update";
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\producto  $producto
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(producto $producto)
     {
         //

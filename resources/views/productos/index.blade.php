@@ -32,7 +32,8 @@
                 <th class="px-4 py-3">Max Stock</th>
                 <th class="px-4 py-3">Precio</th>
                 <th class="px-4 py-3">Ubicación</th>
-                <th class="px-4 py-3">Tipo de Producto</th>                
+                <th class="px-4 py-3">Tipo de Producto</th>  
+                <th class="px-4 py-3">Acciones</th>                
               </tr>
             </thead>
             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">              
@@ -45,7 +46,8 @@
                         <td class="px-4 py-3 text-sm">{{$producto->max_stock}}</td>
                         <td class="px-4 py-3 text-sm">L {{$producto->precio}}</td>
                         <td class="px-4 py-3 text-xs">{{$producto->ubicacion}}</td>
-                        <td class="px-4 py-3 text-sm">{{$producto->tipo->tipo}}</td>                        
+                        <td class="px-4 py-3 text-sm">{{$producto->tipo->tipo}}</td>  
+                        <td class="px-4 py-3 text-sm"><a href="{{route('productos.edit', $producto)}}">Editar</a></td>                        
                     </tr>
                 @endforeach              
             </tbody>
