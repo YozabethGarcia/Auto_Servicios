@@ -22,7 +22,14 @@ class ProductoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'barcode' => $this->faker->randomNumber(),
+            'descripcion' => $this->faker->sentence(),
+            'stock' => $this->faker->randomNumber(2),
+            'min_stock' => $this->faker->randomNumber(2),
+            'max_stock' => $this->faker->randomNumber(2),
+            'precio' => $this->faker->randomFloat(2, 0, 3),
+            'ubicacion' => $this->faker->sentence(),
+            'tipo_producto_id' => $this->faker->numberBetween(1, 6)
         ];
     }
 }
