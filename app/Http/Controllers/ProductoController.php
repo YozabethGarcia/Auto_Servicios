@@ -89,7 +89,8 @@ class ProductoController extends Controller
     public function edit(producto $producto)
     {
         //        
-        return view('productos.edit', compact('producto'));
+        $tipoproducto = tipo_producto::all();
+        return view('productos.edit', compact('producto', 'tipoproducto'));
     }
 
     /**
@@ -101,8 +102,29 @@ class ProductoController extends Controller
      */
     public function update(Request $request, producto $producto)
     {
-        //
-        return "update";
+        $request->validate([
+            'codigo' => 'required',
+            'descripcion' => 'required',
+            'valor' => 'required',
+            'valormin' => 'required',
+            'valormax' => 'required',
+            'precio' => 'required',
+            'ubicacion' => 'required',
+            'tproducto' => 'required'
+        ]);
+
+        $producto->barcode=$request->codigo;
+        $producto->descripcion=$request->descripcion;
+        $producto->stock=$request->valor;
+        $producto->min_stock=$request->valormin;
+        $producto->max_stock=$request->valormax;
+        $producto->precio=$request->precio;
+        $producto->ubicacion=$request->ubicacion;
+        $producto->tipo_producto_id=$request->tproducto;
+        $producto->foto=$request->foto;
+        $producto->save();
+        
+        return redirect()->route('productos');
     }
 
     public function destroy(producto $producto)
