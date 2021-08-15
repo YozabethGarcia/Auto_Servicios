@@ -16,7 +16,7 @@ class ProductoController extends Controller
     public function index()
     {
         //
-        $productos = Producto::all();
+        $productos = Producto::paginate();
         //['productos' => $productos] equivale a compact('productos')
         return view('productos.index', compact('productos'));
     }

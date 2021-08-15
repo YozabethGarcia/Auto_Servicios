@@ -16,7 +16,7 @@ class EmpleadoController extends Controller
     public function index()
     {
         //
-        $empleados = Empleado::all();
+        $empleados = Empleado::paginate();
         return view("empleados.index", compact('empleados'));
     }
 
