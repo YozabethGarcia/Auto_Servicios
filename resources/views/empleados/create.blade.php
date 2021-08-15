@@ -82,7 +82,7 @@
                         class="bg-white text-blue-800 font-semibold my-2 py-2 px-4 border border-blue-400 rounded shadow">
                             Ingresar
                         </button>  
-                        <a href="{{route('empleados')}}">Cancelar</a>
+                        <a href="{{route('empleados.index')}}">Cancelar</a>
                     </div>
                     <div class="p-5" style="float: left; width: 600px"><br>
                         
