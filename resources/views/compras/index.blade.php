@@ -26,6 +26,8 @@
             <thead>
               <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                 <th class="px-4 py-3">Fecha</th>
+                <th class="px-4 py-3">CAI</th>
+                <th class="px-4 py-3">CAEE</th>
                 <th class="px-4 py-3"># Factura</th>
                 <th class="px-4 py-3">Proveedor</th>
                 <th class="px-4 py-3">Sub total</th>
@@ -38,12 +40,14 @@
             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">              
                 @foreach($compras as $compra)
                     <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-                        <td class="px-4 py-3">{{$compra->fecha}}</td>
-                        <td class="px-4 py-3 text-sm">{{$compra->factura}}</td>
+                        <td class="px-4 py-3 text-xs">{{$compra->fecha}}</td>                        
+                        <td class="px-4 py-3 text-xs">{{$compra->cai}}</td>
+                        <td class="px-4 py-3 text-xs">{{$compra->caee}}</td>
+                        <td class="px-4 py-3 text-xs">{{$compra->factura}}</td>
                         <td class="px-4 py-3 text-xs">{{$compra->proveedor->nombre}}</td>
-                        <td class="px-4 py-3 text-sm">L {{$compra->subtotal}}</td>
-                        <td class="px-4 py-3 text-sm">L {{$compra->descuento}}</td>
-                        <td class="px-4 py-3 text-sm">L {{$compra->isv}}</td>
+                        <td class="px-4 py-3 text-xs">L {{$compra->subtotal}}</td>
+                        <td class="px-4 py-3 text-xs">L {{$compra->descuento}}</td>
+                        <td class="px-4 py-3 text-xs">L {{$compra->isv}}</td>
                         <td class="px-4 py-3 text-xs">L {{$compra->total}}</td>  
                         <td class="px-4 py-3 text-xs"><a href="{{route('compras.edit', $compra)}}">Editar</a></td>                        
                     </tr>

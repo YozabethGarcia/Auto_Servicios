@@ -16,7 +16,9 @@ class CreateComprasTable extends Migration
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
             $table->date('fecha');
+            $table->string('cai', 45)->unique();
             $table->string('factura', 45)->unique();
+            $table->string('caee', 45)->unique();
             $table->float('subtotal');
             $table->float('descuento');
             $table->float('isv');

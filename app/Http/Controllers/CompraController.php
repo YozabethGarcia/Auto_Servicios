@@ -48,7 +48,9 @@ class CompraController extends Controller
             'descuento' => 'required',
             'isv' => 'required',
             'total' => 'required',
-            'proveedor' => 'required'
+            'proveedor' => 'required',
+            'cai' => 'required',
+            'caee' => 'required'
         ]);
 
         $compra = new compra;
@@ -58,6 +60,8 @@ class CompraController extends Controller
         $compra->descuento=$request->descuento;
         $compra->isv=$request->isv;
         $compra->total=$request->total;
+        $compra->caee=$request->caee;
+        $compra->cai=$request->cai;
         $compra->proveedor_id=$request->proveedor;
         $compra->save();
 
@@ -106,7 +110,9 @@ class CompraController extends Controller
             'descuento' => 'required',
             'isv' => 'required',
             'total' => 'required',
-            'proveedor' => 'required'
+            'proveedor' => 'required',
+            'cai' => 'required',
+            'caee' => 'required'
         ]);
 
         $compra->fecha=$request->fecha;
@@ -115,6 +121,8 @@ class CompraController extends Controller
         $compra->descuento=$request->descuento;
         $compra->isv=$request->isv;
         $compra->total=$request->total;
+        $compra->total=$request->total;
+        $compra->caee=$request->caee;
         $compra->proveedor_id=$request->proveedor;
         $compra->save();
 

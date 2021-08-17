@@ -89,9 +89,23 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/compras/{compra}', [Compr
 Route::middleware(['auth:sanctum', 'verified'])->get('/compras/{compra}/edit', [CompraController::class, 'edit'])
 ->name('compras.edit');
 
+
+
 /* Controlador para ventas */
 Route::middleware(['auth:sanctum', 'verified'])->get('/ventas', [VentaController::class, 'index'])
-->name('ventas');
+->name('ventas.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/ventas/create', [VentaController::class, 'create'])
 ->name('ventas.create');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/ventas', [VentaController::class, 'store'])
+->name('ventas.store');
+
+Route::middleware(['auth:sanctum', 'verified'])->put('/ventas/{venta}', [CompraController::class, 'update'])
+->name('ventas.update');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/ventas/{venta}', [VentaController::class, 'show'])
+->name('ventas.show');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/ventas/{venta}/edit', [VentaController::class, 'edit'])
+->name('ventas.edit');

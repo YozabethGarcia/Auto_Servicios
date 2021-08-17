@@ -27,7 +27,19 @@
                             <br>                            
                             @error('factura') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
-                 
+                        <div class="mt-1">
+                            <label  class="inline-block text-gray-400 w-32 font-bold"># CAI:</label>
+                            <input name="cai" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            type="text" value="{{old('cai')}}">
+                            <br>                            
+                            @error('cai') <span class="error text-red-600">{{$message}}</span> @enderror
+                        </div><div class="mt-1">
+                            <label  class="inline-block text-gray-400 w-32 font-bold"># CAEE:</label>
+                            <input name="caee" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            type="text" value="{{old('caee')}}">
+                            <br>                            
+                            @error('caee') <span class="error text-red-600">{{$message}}</span> @enderror
+                        </div>
                         <div class="mb-8 mt-1">
                             <label class="inline-block text-gray-400 w-32 font-bold">Cargo:</label>
                             <select name="proveedor" 
