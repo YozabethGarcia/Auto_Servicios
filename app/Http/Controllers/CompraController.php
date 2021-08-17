@@ -114,8 +114,8 @@ class CompraController extends Controller
         $compra->subtotal=$request->subtotal;
         $compra->descuento=$request->descuento;
         $compra->isv=$request->isv;
-        $compra->total=$request->telefono;
-        $compra->proveedor=$request->proveedor;
+        $compra->total=$request->total;
+        $compra->proveedor_id=$request->proveedor;
         $compra->save();
 
         return redirect()->route('compras.index');

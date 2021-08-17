@@ -32,6 +32,7 @@
                 <th class="px-4 py-3">Descuento</th>
                 <th class="px-4 py-3">ISV</th>
                 <th class="px-4 py-3">Total</th>                
+                <th class="px-4 py-3">Acciones</th>                
               </tr>
             </thead>
             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">              
@@ -43,7 +44,8 @@
                         <td class="px-4 py-3 text-sm">L {{$compra->subtotal}}</td>
                         <td class="px-4 py-3 text-sm">L {{$compra->descuento}}</td>
                         <td class="px-4 py-3 text-sm">L {{$compra->isv}}</td>
-                        <td class="px-4 py-3 text-xs">L {{$compra->total}}</td>                        
+                        <td class="px-4 py-3 text-xs">L {{$compra->total}}</td>  
+                        <td class="px-4 py-3 text-xs"><a href="{{route('compras.edit', $compra)}}">Editar</a></td>                        
                     </tr>
                 @endforeach              
             </tbody>
