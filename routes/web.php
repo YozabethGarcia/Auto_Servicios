@@ -72,10 +72,22 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/empleados/{empleado}/edit
 
 /* Controlador para compras */
 Route::middleware(['auth:sanctum', 'verified'])->get('/compras', [CompraController::class, 'index'])
-->name('compras');
+->name('compras.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/compras/create', [CompraController::class, 'create'])
 ->name('compras.create');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/compras', [CompraController::class, 'store'])
+->name('compras.store');
+
+Route::middleware(['auth:sanctum', 'verified'])->put('/compras/{compra}', [CompraController::class, 'update'])
+->name('compras.update');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/compras/{compra}', [CompraController::class, 'show'])
+->name('compras.show');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/compras/{compra}/edit', [CompraController::class, 'edit'])
+->name('compras.edit');
 
 /* Controlador para ventas */
 Route::middleware(['auth:sanctum', 'verified'])->get('/ventas', [VentaController::class, 'index'])
