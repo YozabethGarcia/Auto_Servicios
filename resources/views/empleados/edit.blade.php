@@ -4,66 +4,68 @@
     <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
         
         <div>
-            <form action="{{route('empleados.store')}}" method="POST"> 
+            <form action="{{route('empleados.update', $empleado)}}" method="POST"> 
                 
             @csrf
+
+            @method('put')
 
                 <div class="py-6 w-100">
                     <div class="w-50 py-4  sm:px-6 lg:px-8" style="float: left">
                         
-                        <h2>REGISTRAR EMPLEADO</h2><br>
+                        <h2>EDITAR EMPLEADO</h2><br>
                     
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Primer Nombre:</label>
                             <input name="pnombre" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{old('pnombre')}}">
+                            type="text" value="{{old('pnombre', $empleado->pnombre)}}">
                             <br>
                             @error('pnombre') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Segundo Nombre:</label>
                             <input name="snombre" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{old('snombre')}}">
+                            type="text" value="{{old('snombre',$empleado->snombre)}}">
                             <br>                            
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Primer Apellido:</label>
                             <input name="papellido" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{old('papellido')}}">
+                            type="text" value="{{old('papellido', $empleado->papellido)}}">
                             <br>
                             @error('papellido') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Segundo Apellido:</label>
                             <input name="sapellido" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{old('sapellido')}}">
+                            type="text" value="{{old('sapellido', $empleado->sapellido)}}">
                             <br>                            
                         </div>
                         <br>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Identidad:</label>
                             <input name="identidad" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{old('identidad')}}">
+                            type="text" value="{{old('identidad', $empleado->identidad)}}">
                             <br>
                             @error('identidad') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Telefono:</label>
                             <input name="telefono" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{old('telefono')}}">
+                            type="text" value="{{old('telefono', $empleado->telefono)}}">
                             <br>
                             @error('telefono') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Email:</label>
                             <input name="email" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="email" value="{{old('email')}}">
+                            type="email" value="{{old('email', $empleado->email)}}">
                             <br>
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Dirección:</label>
                             <textarea name="direccion"
                             class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            cols="50" rows="3">{{old('direccion')}}</textarea> 
+                            cols="50" rows="3">{{old('direccion', $empleado->direccion)}}</textarea> 
                             @error('direccion') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>                    
                         </div><br>              
@@ -73,14 +75,14 @@
                                 class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
                                 <option value=''>Seleccione el cargo</option>
                                 @foreach($cargos as $cargo)
-                                <option value={{ $cargo->id }} <?php if($cargo->id == old('cargos')) echo 'selected' ?>> {{ $cargo->cargo }}</option>
+                                <option value={{ $cargo->id }} <?php if($cargo->id == old('cargos',$empleado->cargo_id)) echo 'selected' ?>> {{ $cargo->cargo }}</option>
                                 @endforeach
                             </select>
                             @error('cargos') <br><span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
                         <button  type="submit"
                         class="bg-white text-blue-800 font-semibold my-2 py-2 px-4 border border-blue-400 rounded shadow">
-                            Ingresar
+                            Guardar
                         </button>  
                         <a href="{{route('empleados.index')}}">Cancelar</a>
                     </div>

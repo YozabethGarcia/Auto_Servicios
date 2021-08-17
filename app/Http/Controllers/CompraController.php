@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\compra;
+use App\Models\proveedor;
 use Illuminate\Http\Request;
 
 class CompraController extends Controller
@@ -15,7 +16,7 @@ class CompraController extends Controller
     public function index()
     {
         //
-        $compras = compra::all();
+        $compras = compra::paginate();
         return view('compras.index', compact('compras'));
     }
 
@@ -27,6 +28,8 @@ class CompraController extends Controller
     public function create()
     {
         //
+        $proveedores = proveedor::all();
+        return view("compras.create", compact('proveedores'));
     }
 
     /**
@@ -38,6 +41,31 @@ class CompraController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'fecha' => 'required',
+            'factura' => 'required',
+            'subtotal' => 'required',
+            'descuento' => 'required',
+            'isv' => 'required',
+            'total' => 'required',
+            'proveedor' => 'required',
+            'cai' => 'required',
+            'caee' => 'required'
+        ]);
+
+        $compra = new compra;
+        $compra->fecha=$request->fecha;
+        $compra->factura=$request->factura;
+        $compra->subtotal=$request->subtotal;
+        $compra->descuento=$request->descuento;
+        $compra->isv=$request->isv;
+        $compra->total=$request->total;
+        $compra->caee=$request->caee;
+        $compra->cai=$request->cai;
+        $compra->proveedor_id=$request->proveedor;
+        $compra->save();
+
+        return redirect()->route('compras.index');
     }
 
     /**
@@ -60,6 +88,9 @@ class CompraController extends Controller
     public function edit(compra $compra)
     {
         //
+        $proveedores = proveedor::all();
+        return view("compras.edit", compact('proveedores', 'compra'));
+        
     }
 
     /**
@@ -72,6 +103,30 @@ class CompraController extends Controller
     public function update(Request $request, compra $compra)
     {
         //
+        $request->validate([
+            'fecha' => 'required',
+            'factura' => 'required',
+            'subtotal' => 'required',
+            'descuento' => 'required',
+            'isv' => 'required',
+            'total' => 'required',
+            'proveedor' => 'required',
+            'cai' => 'required',
+            'caee' => 'required'
+        ]);
+
+        $compra->fecha=$request->fecha;
+        $compra->factura=$request->factura;
+        $compra->subtotal=$request->subtotal;
+        $compra->descuento=$request->descuento;
+        $compra->isv=$request->isv;
+        $compra->total=$request->total;
+        $compra->total=$request->total;
+        $compra->caee=$request->caee;
+        $compra->proveedor_id=$request->proveedor;
+        $compra->save();
+
+        return redirect()->route('compras.index');
     }
 
     /**

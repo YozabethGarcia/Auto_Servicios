@@ -18,7 +18,9 @@ class CreateVentasTable extends Migration
             $table->date('fecha');
             $table->string('factura', 45);
             $table->string('cai', 45);
+            $table->string('caee', 45);
             $table->string('cliente',45);
+            $table->string('rtn',45);
             $table->float('subtotal');
             $table->float('descuento');
             $table->float('isv');

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -19,7 +20,7 @@ class UserSeeder extends Seeder
         $user->id = 1;
         $user->name = "Administrador";
         $user->email = "admin@autoservicios.com";
-        $user->password = "\$10\$kwl0fhNZDI4Mpo7S.fFuie4.SjjbMW2P8z6MqNY8mL3/XLCJAZKd6";
+        $user->password = Hash::make("admin123");
         $user->current_team_id = 1;
         $user->save() ;
     }

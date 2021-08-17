@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\venta;
-use App\Models\facturacione;
+use App\Models\planilla;
 use Illuminate\Http\Request;
 
-class VentaController extends Controller
+class PlanillaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class VentaController extends Controller
      */
     public function index()
     {
-        $ventas = venta::paginate();
-        return view("ventas.index", compact('ventas'));
+        $planilla = planilla::paginate();
+        return view("planillas.index", compact('planilla'));
         //
     }
 
@@ -28,8 +27,6 @@ class VentaController extends Controller
     public function create()
     {
         //
-        $factura = facturacione::all();
-        return view("ventas.create", compact('factura'));
     }
 
     /**
@@ -46,10 +43,10 @@ class VentaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\venta  $venta
+     * @param  \App\Models\planilla  $planilla
      * @return \Illuminate\Http\Response
      */
-    public function show(venta $venta)
+    public function show(planilla $planilla)
     {
         //
     }
@@ -57,10 +54,10 @@ class VentaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\venta  $venta
+     * @param  \App\Models\planilla  $planilla
      * @return \Illuminate\Http\Response
      */
-    public function edit(venta $venta)
+    public function edit(planilla $planilla)
     {
         //
     }
@@ -69,10 +66,10 @@ class VentaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\venta  $venta
+     * @param  \App\Models\planilla  $planilla
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, venta $venta)
+    public function update(Request $request, planilla $planilla)
     {
         //
     }
@@ -80,10 +77,10 @@ class VentaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\venta  $venta
+     * @param  \App\Models\planilla  $planilla
      * @return \Illuminate\Http\Response
      */
-    public function destroy(venta $venta)
+    public function destroy(planilla $planilla)
     {
         //
     }

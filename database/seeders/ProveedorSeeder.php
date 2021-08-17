@@ -18,6 +18,7 @@ class ProveedorSeeder extends Seeder
         $proveedor = new proveedor();
         $proveedor->id = 1;
         $proveedor->nombre = "Warco";
+        $proveedor->rtn = "080119990108018";
         $proveedor->telefono = "32142563";
         $proveedor->email = "warco@warco.com";
         $proveedor->direccion = "Barrio los mangos, Choluteca";
