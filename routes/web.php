@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CompraController;
+use App\Http\Controllers\PlanillaController;
 use App\Http\Controllers\VentaController;
 use Database\Seeders\ProductoVentaSeeder;
 
@@ -109,3 +110,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/ventas/{venta}', [VentaCo
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/ventas/{venta}/edit', [VentaController::class, 'edit'])
 ->name('ventas.edit');
+
+/* Controlador para planillas */
+Route::middleware(['auth:sanctum', 'verified'])->get('/planillas', [PlanillaController::class, 'index'])
+->name('planillas.index');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/planillas/create', [PlanillaController::class, 'create'])
+->name('planillas.create');
+

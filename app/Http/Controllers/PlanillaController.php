@@ -14,6 +14,8 @@ class PlanillaController extends Controller
      */
     public function index()
     {
+        $planilla = planilla::paginate();
+        return view("planillas.index", compact('planilla'));
         //
     }
 
