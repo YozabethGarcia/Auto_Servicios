@@ -20,7 +20,8 @@ class FacturacioneSeeder extends Seeder
         $facturacion->min_rango = 1;
         $facturacion->max_rango = 2500;
         $facturacion->ultima_generada =0;
-        $facturacion->max_fecha ="31-12-2021";
+        $facturacion->max_fecha ="2021-12-31";
+        $facturacion->activo = true;
         $facturacion->id=1;
         $facturacion->save();
     }

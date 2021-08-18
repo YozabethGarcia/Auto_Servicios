@@ -15,12 +15,14 @@ class CreateFacturacionesTable extends Migration
     {
         Schema::create('facturaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('cai',45);
+            $table->string('cai',45)->unique();
             $table->integer('min_rango');
             $table->integer('max_rango');
             $table->integer('ultima_generada');
             $table->date('max_fecha');
+            $table->boolean('activo');
             $table->timestamps();
+            
         });
     }
 

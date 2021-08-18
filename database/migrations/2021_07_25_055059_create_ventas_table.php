@@ -20,7 +20,7 @@ class CreateVentasTable extends Migration
             $table->string('cai', 45);
             $table->string('caee', 45);
             $table->string('cliente',45);
-            $table->string('rtn',45);
+            $table->string('rtn',45)->nullable();
             $table->float('subtotal');
             $table->float('descuento');
             $table->float('isv');

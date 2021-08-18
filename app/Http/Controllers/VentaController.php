@@ -28,8 +28,30 @@ class VentaController extends Controller
     public function create()
     {
         //
-        $factura = facturacione::all();
-        return view("ventas.create", compact('factura'));
+        $resultado = facturacione::all();
+                
+        $cai = $resultado[0];
+        if($cai->ultima_generada < 10){
+            $ceros = "0000000";
+        }elseif ($cai->ultima_generada < 100){
+            $ceros = "000000";
+        }elseif ($cai->ultima_generada < 1000){
+            $ceros = "00000";
+        }elseif ($cai->ultima_generada < 10000){
+            $ceros = "0000";
+        }elseif ($cai->ultima_generada < 100000){
+            $ceros = "000";
+        }elseif ($cai->ultima_generada < 1000000){
+            $ceros = "00";
+        }elseif ($cai->ultima_generada < 10000000){
+            $ceros = "0";
+        }else{
+            $ceros = "";
+        }
+    
+        $factura = "001-01-" . $ceros . $cai->ultima_generada + 1;
+
+        return view("ventas.create", compact('factura', 'cai'));
     }
 
     /**
@@ -41,6 +63,35 @@ class VentaController extends Controller
     public function store(Request $request)
     {
         //
+
+        $factura = facturacione::find(1);        
+
+        $request->validate([
+            'fecha' => 'required',            
+            'factura' => 'required',
+            'cliente' => 'required',            
+            'subtotal' => 'required',
+            'descuento' => 'required',
+            'isv' => 'required',
+            'total' => 'required'
+        ]);
+
+        $venta = new venta;
+        $venta->fecha=$request->fecha;
+        $venta->cai=$factura->cai;
+        $venta->caee="ASDH72HD8AW";
+        $venta->factura=$request->factura;
+        $venta->cliente=$request->cliente;
+        $venta->rtn=$request->rtn;
+        $venta->subtotal=$request->subtotal;
+        $venta->descuento=$request->descuento;
+        $venta->isv=$request->isv;
+        $venta->total=$request->total;        
+        $venta->save();
+        
+        $factura->ultima_generada++;
+        $factura->save();
+        return redirect()->route('ventas.index');
     }
 
     /**

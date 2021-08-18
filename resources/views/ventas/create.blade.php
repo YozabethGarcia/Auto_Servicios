@@ -4,7 +4,7 @@
     <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
         
         <div>
-            <form action="{{route('ventas.store')}}" method="POST"> 
+            <form action="{{route('ventas.store', $cai)}}" method="POST"> 
                 
             @csrf
 
@@ -18,22 +18,15 @@
                             <input name="fecha" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             type="date" value="{{old('fecha')}}">
                             <br>
-                            @error('date') <span class="error text-red-600">{{$message}}</span> @enderror
+                            @error('fecha') <span class="error text-red-600">{{$message}}</span> @enderror
                         </div>
-
+                        
                         <div class="mt-1">
-                            <label  class="inline-block text-gray-400 w-32 font-bold"># CAI:</label>
-                            <input name="cai" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{old('cai')}}">
+                            <label  class="inline-block text-gray-400 w-32 font-bold"># FACTURA:</label>
+                            <input name="factura" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            type="text" value="{{$factura}}">                            
                             <br>                            
-                            @error('cai') <span class="error text-red-600">{{$message}}</span> @enderror
-                        </div><div class="mt-1">
-                            <label  class="inline-block text-gray-400 w-32 font-bold"># CAEE:</label>
-                            <input name="caee" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="text" value="{{old('caee')}}">
-                            <br>                            
-                            @error('caee') <span class="error text-red-600">{{$message}}</span> @enderror
-                        </div>
+                            @error('factura') <span class="error text-red-600">{{$message}}</span> @enderror
                         <div class="mt-1">
                             <label  class="inline-block text-gray-400 w-32 font-bold">Cliente:</label>
                             <input name="cliente" class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
